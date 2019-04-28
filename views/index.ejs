@@ -2,58 +2,156 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Smart Resto</title>
+  <title>Smart Resto</title>
 
-    <!-- RESET CSS -->
-    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+  <!-- RESET CSS -->
+  <link rel="stylesheet" type="text/css" href="css/reset.css" />
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- Leaflet's JS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
-        integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-        crossorigin="" />
-    <!-- Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
-        integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
-        crossorigin=""></script>
+  <!-- Leaflet's JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin="" />
+  <!-- Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
 
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 
 
 <body class="bg-dark">
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <div class="jumbotron bg-white mt-4">
-                <h1 class="display-3">Smart Resto</h1>
+
+
+  <!-- A grey horizontal navbar that becomes vertical on small screens -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+    <a class="navbar-brand fonttitle ml-3 mr-5" id="brand" href="#">S-R</a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link">Left Link 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Left Link 2</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link">Right Link 1</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"> Dropdown on Right</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Action</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+
+
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <hr class="bg-white mb-0">
+      <h1 class="display-1 fonttitle text-center">Smart Resto</h1>
+      <hr class="bg-white mt-0">
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+
+
+
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <!-- 
+                    <h1 class="display-3">Smart Resto</h1>
                 <p class="lead">No queues, excellent food and the best service possible is what we Smart Resto strive
                     towards.</p>
-                <hr class="my-4">
+                <hr class="my-4"> 
+            -->
+      <!--Carousel Wrapper-->
+      <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+        <!--Indicators-->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-2" data-slide-to="1"></li>
+          <li data-target="#carousel-example-2" data-slide-to="2"></li>
+        </ol>
+        <!--/.Indicators-->
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <div class="view">
+              <img class="d-block w-100"
+                src="https://i.pinimg.com/originals/0c/8a/95/0c8a95c8000c420d33a0a51d4f94f7d6.jpg" alt="First slide">
+              <div class="mask rgba-black-light"></div>
             </div>
+          </div>
+          <div class="carousel-item">
+            <!--Mask color-->
+            <div class="view">
+              <img class="d-block w-100"
+                src="http://www.ohenrymag.com/wp-content/uploads/2019/01/sa_foodforthought_119.jpg" alt="Second slide">
+              <div class="mask rgba-black-strong"></div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <!--Mask color-->
+            <div class="view">
+              <img class="d-block w-100"
+                src="https://www.nationalgrapheneassociation.com/wp-content/uploads/bfi_thumb/new-graphene-based-sensor-could-boost-food-safety-2018-12-05-o04no1w0ipukc9nooy4ws0zizb2yt0scgoap4r4eq0.jpg"
+                alt="Third slide">
+              <div class="mask rgba-black-slight"></div>
+            </div>
+          </div>
         </div>
-        <div class="col-md-2"></div>
+        <!--/.Slides-->
+        <!--Controls-->
+        <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        <!--/.Controls-->
+      </div>
+      <!--/.Carousel Wrapper-->
     </div>
+    <div class="col-md-2"></div>
+  </div>
 
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <div class="jumbotron bg-white mt-4">
-                <h1>Smart Resto Location</h1>
-                <div id="mapid"></div>
-                <hr class="my-4">
-            </div>
-        </div>
-        <div class="col-md-2"></div>
+
+
+
+
+
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="jumbotron bg-white mt-4">
+        <h2>Smart Resto Location</h2>
+        <div id="mapid"></div>
+        <hr class="my-4">
+      </div>
     </div>
-    <!--
+    <div class="col-md-2"></div>
+  </div>
+  <!--
         <p class="lead">
                     <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
                 </p>
@@ -62,48 +160,47 @@
 
 
 
-    <div class="row mb-5">
-        <div class="col-md-2"></div>
-        <div class="col-md-2 ">
-            <div class="card py-4 h-100">
-                <div class="card-body text-center">
-                    <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                    <h4 class="text-uppercase m-0">Address</h4>
-                    <hr class="my-2">
-                    <div class="small text-black-50">4923 Market Street, Orlando FL</div>
-                </div>
-            </div>
+  <div class="row mb-5">
+    <div class="col-md-2"></div>
+    <div class="col-md-2 ">
+      <div class="card py-4 h-100">
+        <div class="card-body text-center">
+          <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+          <h4 class="text-uppercase m-0">Address</h4>
+          <hr class="my-2">
+          <div class="small text-black-50">4923 Market Street, Orlando FL</div>
         </div>
-
-        <div class="col-md-1"></div>
-
-        <div class="col-md-2 ">
-            <div class="card py-4 h-100">
-                <div class="card-body text-center">
-                    <i class="fas fa-envelope text-primary mb-2"></i>
-                    <h4 class="text-uppercase m-0">Email</h4>
-                    <hr class="my-2">
-                    <div class="small text-black-50">
-                        <a href="#">info@smartresto.com</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-1"></div>
-
-        <div class="col-md-2 ">
-            <div class="card py-4 h-100">
-                <div class="card-body text-center">
-                    <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                    <h4 class="text-uppercase m-0">Phone</h4>
-                    <hr class="my-2">
-                    <div class="small text-black-50">+1 (555) 902-8832</div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
 
+    <div class="col-md-1"></div>
+
+    <div class="col-md-2 ">
+      <div class="card py-4 h-100">
+        <div class="card-body text-center">
+          <i class="fas fa-envelope text-primary mb-2"></i>
+          <h4 class="text-uppercase m-0">Email</h4>
+          <hr class="my-2">
+          <div class="small text-black-50">
+            <a href="#">info@smartresto.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-1"></div>
+
+    <div class="col-md-2 ">
+      <div class="card py-4 h-100">
+        <div class="card-body text-center">
+          <i class="fas fa-mobile-alt text-primary mb-2"></i>
+          <h4 class="text-uppercase m-0">Phone</h4>
+          <hr class="my-2">
+          <div class="small text-black-50">+1 (555) 902-8832</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -114,26 +211,27 @@
 
 
 
-    <script>
-        var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
-        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            maxZoom: 18,
-            id: 'mapbox.streets',
-            accessToken: 'your.mapbox.access.token'
-        }).addTo(mymap);
-    </script>
+  <script>
+    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox.streets',
+      accessToken: 'your.mapbox.access.token'
+    }).addTo(mymap);
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -1,7 +1,35 @@
 #mapid {
     height: 530px;
 }
+#brand{
+    font-size:2rem;
+}
 
-.row{
+.row {
     margin-right: 0px !important;
+}
+
+.view img {
+    max-height: 500px;
+    border-radius: .3rem;
+}
+
+h1 {
+    color: #ddd;
+}
+
+.fonttitle {
+    font-family: Brush Script MT, Brush Script Std, cursive !important;
+}
+
+.jumbotron {
+    background-color: #ddd !important;
+}
+
+.navbar {
+    background-color: #ddd !important;
+}
+
+.card{
+    background-color: #ddd !important;
 }
