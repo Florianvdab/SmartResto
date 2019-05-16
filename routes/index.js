@@ -10,4 +10,8 @@ router.get('/meals', function(req, res, next) {
   res.render('meals', { title: 'Express' });
 });
 
+router.get('/reservations', function(req, res, next) {
+  res.render('reservations', { title: 'Express' });
+});
+
 module.exports = router;
