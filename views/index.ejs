@@ -15,13 +15,13 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <!-- Leaflet's JS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
-    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-    crossorigin="" />
   <!-- Leaflet's CSS -->
-  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
-    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+  <!-- Leaflet's JS -->
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
     crossorigin=""></script>
 
   <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -30,39 +30,39 @@
 
 <body class="bg-dark">
 
+  <!--NAVBAR-->
 
-  <!-- A grey horizontal navbar that becomes vertical on small screens -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
-    <a class="navbar-brand fonttitle ml-3 mr-5" id="brand" href="#">S-R</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand fonttitle ml-3 mr-5" id="brand" href="/">S-R</a>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link">Left Link 1</a>
+        <a class="nav-link active" href="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link">Left Link 2</a>
+        <a class="nav-link" href="/meals">Reserveren</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Reservaties</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link">Right Link 1</a>
-      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false"> Dropdown on Right</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Action</a>
+          aria-haspopup="true" aria-expanded="false">Menu</a>
+        <div class="dropdown-menu dropdown-menu-right text-right">
+          <a class="dropdown-item" href="#">About</a>
+          <a class="dropdown-item" href="#">Contact</a>
         </div>
       </li>
     </ul>
   </nav>
 
-
+  <!--TITLE-->
 
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-        <hr class="bg-white mb-0">
+      <hr class="bg-white mb-0">
       <h1 class="display-1 fonttitle text-center">Smart Resto</h1>
       <hr class="bg-white mt-0">
     </div>
@@ -70,17 +70,11 @@
   </div>
 
 
-
+  <!--CAROUSEL-->
 
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
-      <!-- 
-                    <h1 class="display-3">Smart Resto</h1>
-                <p class="lead">No queues, excellent food and the best service possible is what we Smart Resto strive
-                    towards.</p>
-                <hr class="my-4"> 
-            -->
       <!--Carousel Wrapper-->
       <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
         <!--Indicators-->
@@ -95,7 +89,13 @@
           <div class="carousel-item active">
             <div class="view">
               <img class="d-block w-100"
-                src="https://i.pinimg.com/originals/0c/8a/95/0c8a95c8000c420d33a0a51d4f94f7d6.jpg" alt="First slide">
+                src="https://ccr-website.azureedge.net/ccr-website-prod/images/default-source/galleryimages/salads-at-the-cafe-1545852448.png?sfvrsn=5d919fd9_0"
+                alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <a class="btn btn-primary btn-lg rounded" data-toggle="modal"
+                  data-target="#exampleModalCenter">Reserveren</a>
+                <a class="btn btn-secondary btn-lg rounded">Reservaties</a>
+              </div>
               <div class="mask rgba-black-light"></div>
             </div>
           </div>
@@ -103,16 +103,69 @@
             <!--Mask color-->
             <div class="view">
               <img class="d-block w-100"
-                src="http://www.ohenrymag.com/wp-content/uploads/2019/01/sa_foodforthought_119.jpg" alt="Second slide">
+                src="https://www.marketplacediner.com/uploads/4/9/2/0/49205045/2367804_orig.jpg" alt="Second slide">
+              <div class="carousel-caption d-none d-md-block">
+                <a class="btn btn-primary btn-lg rounded" data-toggle="modal"
+                  data-target="#exampleModalCenter">Reserveren</a>
+                <a class="btn btn-secondary btn-lg rounded">Reservaties</a>
+              </div>
               <div class="mask rgba-black-strong"></div>
+
             </div>
           </div>
+
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Pick a date & time!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form action="">
+                    <p>Datum:</p>
+                    <input type="date" name="bday"><br>
+                    <br>
+                    <p>Select a time:</p>
+                    <div>
+                      <p><input type="radio" name="time" value="11u"> 11u</p>
+                      <p><input type="radio" name="time" value="11u30"> 11u30</p>
+                      <p><input type="radio" name="time" value="12u"> 12u</p>
+                      <p><input type="radio" name="time" value="11u"> 11u</p>
+                      <p><input type="radio" name="time" value="11u30"> 11u30</p>
+                      <p><input type="radio" name="time" value="12u"> 12u</p>
+                    </div>
+
+                  </form>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="savechanges">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
           <div class="carousel-item">
             <!--Mask color-->
             <div class="view">
               <img class="d-block w-100"
-                src="https://www.nationalgrapheneassociation.com/wp-content/uploads/bfi_thumb/new-graphene-based-sensor-could-boost-food-safety-2018-12-05-o04no1w0ipukc9nooy4ws0zizb2yt0scgoap4r4eq0.jpg"
+                src="https://www.tft-mag.com/wp-content/uploads/2016/10/Westend-Steak-and-Fish-Factory-Food.jpg"
                 alt="Third slide">
+              <div class="carousel-caption d-none d-md-block">
+                <a class="btn btn-primary btn-lg rounded" data-toggle="modal"
+                  data-target="#exampleModalCenter">Reserveren</a>
+                <a class="btn btn-secondary btn-lg rounded">Reservaties</a>
+              </div>
               <div class="mask rgba-black-slight"></div>
             </div>
           </div>
@@ -135,30 +188,24 @@
   </div>
 
 
-
-
-
-
+  <!--MAP LEAFLET-->
 
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
       <div class="jumbotron bg-white mt-4">
-        <h2>Smart Resto Location</h2>
+        <h2 class="mb-4 mt-2 fonttitle text-center" id="location">Location</h2>
+        <hr>
+
         <div id="mapid"></div>
         <hr class="my-4">
       </div>
     </div>
     <div class="col-md-2"></div>
   </div>
-  <!--
-        <p class="lead">
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-                </p>
-    -->
 
 
-
+  <!--TEXT BLOCKS-->
 
   <div class="row mb-5">
     <div class="col-md-2"></div>
@@ -166,7 +213,7 @@
       <div class="card py-4 h-100">
         <div class="card-body text-center">
           <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-          <h4 class="text-uppercase m-0">Address</h4>
+          <h2 class="m-0 fonttitle">Adress</h2>
           <hr class="my-2">
           <div class="small text-black-50">4923 Market Street, Orlando FL</div>
         </div>
@@ -179,7 +226,7 @@
       <div class="card py-4 h-100">
         <div class="card-body text-center">
           <i class="fas fa-envelope text-primary mb-2"></i>
-          <h4 class="text-uppercase m-0">Email</h4>
+          <h2 class="m-0 fonttitle">Email</h2>
           <hr class="my-2">
           <div class="small text-black-50">
             <a href="#">info@smartresto.com</a>
@@ -194,7 +241,7 @@
       <div class="card py-4 h-100">
         <div class="card-body text-center">
           <i class="fas fa-mobile-alt text-primary mb-2"></i>
-          <h4 class="text-uppercase m-0">Phone</h4>
+          <h2 class="m-0 fonttitle">Telefoon</h2>
           <hr class="my-2">
           <div class="small text-black-50">+1 (555) 902-8832</div>
         </div>
@@ -202,15 +249,7 @@
     </div>
   </div>
 
-
-
-
-
-
-
-
-
-
+  <!--SCRIPTS-->
 
   <script>
     var mymap = L.map('mapid').setView([51.505, -0.09], 13);
@@ -219,8 +258,16 @@
       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
       maxZoom: 18,
       id: 'mapbox.streets',
-      accessToken: 'your.mapbox.access.token'
+      accessToken: 'pk.eyJ1Ijoid2lmaXgiLCJhIjoiY2p2bXBreDhpMTQ1aDRjb2Z0NDA0bGI4ZiJ9.kT6w1wQwRpUTMVLouj9ndQ'
     }).addTo(mymap);
+  </script>
+
+  <script>
+    document.getElementById("savechanges").onclick = nextpage;
+    function nextpage() {
+      window.location.href = "/meals"
+    }
+
   </script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
