@@ -18,6 +18,10 @@ h1 {
     color: #ddd;
 }
 
+.cursor{
+    cursor: pointer;
+}
+
 .fonttitle {
     font-family: Brush Script MT, Brush Script Std, cursive !important;
 }

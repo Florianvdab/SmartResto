@@ -39,10 +39,10 @@
         <a class="nav-link active" href="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/meals">Reserveren</a>
+        <a class="nav-link cursor" data-toggle="modal" data-target="#exampleModalCenter">Reserveren</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/reservations">Reservaties</a>
+        <a class="nav-link cursor" data-toggle="modal" data-target="#exampleModalCenter1">Reservaties</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
@@ -94,7 +94,7 @@
               <div class="carousel-caption d-none d-md-block">
                 <a class="btn btn-primary btn-lg rounded" data-toggle="modal"
                   data-target="#exampleModalCenter">Reserveren</a>
-                  <a class="btn btn-secondary btn-lg rounded" data-toggle="modal"
+                <a class="btn btn-secondary btn-lg rounded" data-toggle="modal"
                   data-target="#exampleModalCenter1">Reservaties</a>
               </div>
               <div class="mask rgba-black-light"></div>
@@ -108,7 +108,7 @@
               <div class="carousel-caption d-none d-md-block">
                 <a class="btn btn-primary btn-lg rounded" data-toggle="modal"
                   data-target="#exampleModalCenter">Reserveren</a>
-                  <a class="btn btn-secondary btn-lg rounded" data-toggle="modal"
+                <a class="btn btn-secondary btn-lg rounded" data-toggle="modal"
                   data-target="#exampleModalCenter1">Reservaties</a>
               </div>
               <div class="mask rgba-black-strong"></div>
@@ -125,7 +125,7 @@
               <div class="carousel-caption d-none d-md-block">
                 <a class="btn btn-primary btn-lg rounded" data-toggle="modal"
                   data-target="#exampleModalCenter">Reserveren</a>
-                  <a class="btn btn-secondary btn-lg rounded" data-toggle="modal"
+                <a class="btn btn-secondary btn-lg rounded" data-toggle="modal"
                   data-target="#exampleModalCenter1">Reservaties</a>
               </div>
               <div class="mask rgba-black-slight"></div>
@@ -150,76 +150,118 @@
   </div>
 
 
-  
 
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Pick a date & time!</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Pick a date & time!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <p>Datum:</p>
+            <input type="date" id="datepicker" name="day"><br>
+            <br>
+            <p>Aantal mensen:</p>
+            <select class="form-control" id="exampleSelect1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+            </select>
+            <br>
+
+            <p>Select a time:</p>
+            <div>
+              <div class="row mb-4">
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="11u"> 11u</p>
                 </div>
-                <div class="modal-body">
-                  <form action="">
-                    <p>Datum:</p>
-                    <input type="date" name="bday"><br>
-                    <br>
-                    <p>Select a time:</p>
-                    <div>
-                      <p><input type="radio" name="time" value="11u"> 11u</p>
-                      <p><input type="radio" name="time" value="11u30"> 11u30</p>
-                      <p><input type="radio" name="time" value="12u"> 12u</p>
-                      <p><input type="radio" name="time" value="11u"> 11u</p>
-                      <p><input type="radio" name="time" value="11u30"> 11u30</p>
-                      <p><input type="radio" name="time" value="12u"> 12u</p>
-                    </div>
-
-                  </form>
-
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="11u30"> 11u30</p>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" id="savechanges">Save changes</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalCenterTitle1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle1">Geef uw ordernummer in!</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <form action="">
-                    <p>Ordernummber:</p>
-                    <div>
-                      <p><input type="text" name="ordernummer" value=""></p>
-                      
-                    </div>
-
-                  </form>
-
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" id="reservaties">Gaan</button>
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="11u30"> 11u30</p>
                 </div>
               </div>
+
+              <div class="row mb-4">
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="11u"> 11u</p>
+                </div>
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="11u30"> 11u30</p>
+                </div>
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="11u30"> 11u30</p>
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="11u"> 11u</p>
+                </div>
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="11u30"> 11u30</p>
+                </div>
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="11u30"> 11u30</p>
+                </div>
+              </div>
+
+
             </div>
-          </div>
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="savechanges">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle1">Geef uw ordernummer in!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <p>Ordernummer:</p>
+            <div>
+              <p><input type="text" name="ordernummer" value=""></p>
+
+            </div>
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="reservaties">Gaan</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -299,16 +341,21 @@
   </script>
 
   <script>
-    document.getElementById("savechanges").onclick = nextpage;
-    function nextpage() {
+    document.getElementById("savechanges").onclick = nextpagemeals;
+    function nextpagemeals() {
       window.location.href = "/meals"
     }
-    document.getElementById("reservaties").onclick = nextpage;
-    function nextpage() {
+    document.getElementById("reservaties").onclick = nextpagereservations;
+    function nextpagereservations() {
       window.location.href = "/reservations"
     }
 
+    document.getElementById("datepicker").onload = function test() {
+      document.getElementById("datepicker").minDate = 0;
+    }
+
   </script>
+
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
