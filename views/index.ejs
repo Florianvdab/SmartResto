@@ -24,6 +24,7 @@
     integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
     crossorigin=""></script>
 
+
   <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 
@@ -170,54 +171,61 @@
             <br>
             <p>Aantal mensen:</p>
             <select class="form-control" id="exampleSelect1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
+              <option value="1" selected="selected">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
             </select>
             <br>
 
             <p>Select a time:</p>
             <div>
-              <div class="row mb-4">
-                <div class="col-sm-4">
-                  <p><input type="radio" name="time" value="11u"> 11u</p>
-                </div>
-                <div class="col-sm-4">
-                  <p><input type="radio" name="time" value="11u30"> 11u30</p>
-                </div>
-                <div class="col-sm-4">
-                  <p><input type="radio" name="time" value="11u30"> 11u30</p>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-sm-4">
-                  <p><input type="radio" name="time" value="11u"> 11u</p>
-                </div>
-                <div class="col-sm-4">
-                  <p><input type="radio" name="time" value="11u30"> 11u30</p>
-                </div>
-                <div class="col-sm-4">
-                  <p><input type="radio" name="time" value="11u30"> 11u30</p>
-                </div>
-              </div>
-
-              <div class="row mb-4">
-                <div class="col-sm-4">
-                  <p><input type="radio" name="time" value="11u"> 11u</p>
-                </div>
-                <div class="col-sm-4">
-                  <p><input type="radio" name="time" value="11u30"> 11u30</p>
-                </div>
-                <div class="col-sm-4">
-                  <p><input type="radio" name="time" value="11u30"> 11u30</p>
-                </div>
-              </div>
-
-
+                <div class="row mb-4">
+                    <div class="col-sm-4">
+                      <p><input type="radio" name="time" value="11u"> 11u</p>
+                    </div>
+                    <div class="col-sm-4">
+                      <p><input type="radio" name="time" value="11u30"> 11u30</p>
+                    </div>
+                    <div class="col-sm-4">
+                      <p><input type="radio" name="time" value="11u30"> 12u</p>
+                    </div>
+                  </div>
+                  <div class="row mb-4">
+                    <div class="col-sm-4">
+                      <p><input type="radio" name="time" value="12u30"> 12u30</p>
+                    </div>
+                    <div class="col-sm-4">
+                      <p><input type="radio" name="time" value="13u"> 13u</p>
+                    </div>
+                    <div class="col-sm-4">
+                      <p><input type="radio" name="time" value="13u30"> 13u30</p>
+                    </div>
+                  </div>
+                  <div class="row mb-4">
+                      <div class="col-sm-4">
+                        <p><input type="radio" name="time" value="17u30"> 17u30</p>
+                      </div>
+                      <div class="col-sm-4">
+                        <p><input type="radio" name="time" value="18u"> 18u</p>
+                      </div>
+                      <div class="col-sm-4">
+                        <p><input type="radio" name="time" value="18u30"> 18u30</p>
+                      </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-sm-4">
+                          <p><input type="radio" name="time" value="19u"> 19u</p>
+                        </div>
+                        <div class="col-sm-4">
+                          <p><input type="radio" name="time" value="19u30"> 19u30</p>
+                        </div>
+                        <div class="col-sm-4">
+                          <p><input type="radio" name="time" value="20u"> 20u</p>
+                        </div>
+                      </div>
             </div>
 
           </form>
@@ -245,14 +253,12 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="">
-            <p>Ordernummer:</p>
-            <div>
-              <p><input type="text" name="ordernummer" value=""></p>
+          <p>Ordernummer:</p>
+          <div>
+            <p><input type="text" id="ordernr" name="ordernummer" value=""></p>
 
-            </div>
+          </div>
 
-          </form>
 
         </div>
         <div class="modal-footer">
@@ -341,12 +347,11 @@
   </script>
 
   <script>
-    document.getElementById("savechanges").onclick = nextpagemeals;
-    function nextpagemeals() {
-      window.location.href = "/meals"
-    }
     document.getElementById("reservaties").onclick = nextpagereservations;
+
     function nextpagereservations() {
+      ordernr = document.getElementById("ordernr").value;
+      localStorage.setItem("ordernr", ordernr);
       window.location.href = "/reservations"
     }
 
@@ -356,6 +361,7 @@
 
   </script>
 
+  <script src="javascripts/order.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

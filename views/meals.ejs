@@ -26,7 +26,7 @@
 
     <script src="javascripts/repos.js"></script>
 
-    <script src="javascripts/script.js"></script>
+    <script src="javascripts/scriptmaaltijden.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
@@ -53,7 +53,8 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Winkelmandje</a>
-                <div class="dropdown-menu dropdown-menu-right text-right">
+                <div class="dropdown-menu dropdown-menu-right text-center" style="width:40vh;" id="winkelmand">
+                    <p id="winkelmandtotaal"></p>
                 </div>
             </li>
         </ul>
@@ -69,177 +70,35 @@
     <div class="row">
         <div class="col-md-3">
 
-            <div class="jumbotron bg-white mt-4 fullheight">
-                <h2 class="mb-4 mt-2 fonttitle text-center" id="location">Filteren</h2>
+            <div class="jumbotron bg-white mt-4 fullheight text-center">
+                <h2 class="mb-4 mt-2 fonttitle text-center" id="location">Details</h2>
                 <hr>
-
-                <form>
-                    <h3 class="fonttitle">Soort gerecht</h3>
-                    <p><input type="checkbox" name="soort" value="voorgerecht"> Voorgerecht</p>
-                    <p><input type="checkbox" name="soort" value="hoofdgerecht"> Hoofdgerecht</p>
-                    <p><input type="checkbox" name="soort" value="dessert"> Dessert</p>
-                    <hr>
-
-                    <h3 class="fonttitle">Cuisines</h3>
-                    <p><input type="checkbox" name="cuisines" value="Italiaans"> Italiaans</p>
-                    <p><input type="checkbox" name="cuisines" value="Chinees"> Chinees</p>
-                    <p><input type="checkbox" name="cuisines" value="Japans"> Japans</p>
-                    <p><input type="checkbox" name="cuisines" value="Grieks"> Grieks</p>
-                    <p><input type="checkbox" name="cuisines" value="Mexicaans"> Mexicaans</p>
-                    <p><input type="checkbox" name="cuisines" value="Overig"> Overig</p>
-
-                    <hr>
-                </form>
+                <h3 class="fonttitle">Datum en tijd</h3>
+                <p id="datum"></p>
+                <h3 class="fonttitle">Aantal personen</h3>
+                <p id="personen"></p>
+                <h3 class="fonttitle">Prijs</h3>
+                <p id="totaal"></p>
+                <br>
+                <br>
+                <button type="button" class="btn btn-primary" id="" data-toggle="modal"
+                    data-target="#exampleModalCenter2">Bestelling plaatsen!</button>
             </div>
 
         </div>
 
         <div class="col-md-1"></div>
 
-        <div id="maaltijden"></div>
 
-        <!-- <div class="col-md-8">
+
+        <div class="col-md-8">
             <div class="jumbotron bg-white mt-4 fullheight" style="overflow-y:scroll;">
                 <h2 class="mb-4 mt-2 fonttitle text-center" id="location">Maaltijden</h2>
                 <hr>
+                <div class="row mb-4" id="maaltijden">
 
-
-                <div class="row mb-4">
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-
-                <div class="row mb-4">
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="row mb-4">
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Special title treatment</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+            </div>
         </div>
     </div>
 
@@ -280,33 +139,44 @@
                                     <p><input type="radio" name="time" value="11u30"> 11u30</p>
                                 </div>
                                 <div class="col-sm-4">
-                                    <p><input type="radio" name="time" value="11u30"> 11u30</p>
+                                    <p><input type="radio" name="time" value="11u30"> 12u</p>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-sm-4">
+                                    <p><input type="radio" name="time" value="12u30"> 12u30</p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p><input type="radio" name="time" value="13u"> 13u</p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p><input type="radio" name="time" value="13u30"> 13u30</p>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-sm-4">
+                                    <p><input type="radio" name="time" value="17u30"> 17u30</p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p><input type="radio" name="time" value="18u"> 18u</p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p><input type="radio" name="time" value="18u30"> 18u30</p>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-sm-4">
+                                    <p><input type="radio" name="time" value="19u"> 19u</p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p><input type="radio" name="time" value="19u30"> 19u30</p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p><input type="radio" name="time" value="20u"> 20u</p>
                                 </div>
                             </div>
 
-                            <div class="row mb-4">
-                                <div class="col-sm-4">
-                                    <p><input type="radio" name="time" value="11u"> 11u</p>
-                                </div>
-                                <div class="col-sm-4">
-                                    <p><input type="radio" name="time" value="11u30"> 11u30</p>
-                                </div>
-                                <div class="col-sm-4">
-                                    <p><input type="radio" name="time" value="11u30"> 11u30</p>
-                                </div>
-                            </div>
 
-                            <div class="row mb-4">
-                                <div class="col-sm-4">
-                                    <p><input type="radio" name="time" value="11u"> 11u</p>
-                                </div>
-                                <div class="col-sm-4">
-                                    <p><input type="radio" name="time" value="11u30"> 11u30</p>
-                                </div>
-                                <div class="col-sm-4">
-                                    <p><input type="radio" name="time" value="11u30"> 11u30</p>
-                                </div>
-                            </div>
                         </div>
                     </form>
                 </div>
@@ -332,12 +202,10 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="">
-                        <p>Ordernummer:</p>
-                        <div>
-                            <p><input type="text" name="ordernummer" value=""></p>
-                        </div>
-                    </form>
+                    <p>Ordernummer:</p>
+                    <div>
+                        <p><input type="text" name="ordernummer" id="ordernr" value=""></p>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -347,23 +215,55 @@
         </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle2">Bestellen!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3 class="fonttitle">Maaltijden</h3>
+                    <div id="samenvatting">
+                    </div>
+                    <h3 class="fonttitle">Prijs</h3>
+                    <p id="wtotaal"></p>
+                    <h3 class="fonttitle">Datum en tijd</h3>
+                    <p id="wdatum"></p>
+                    <h3 class="fonttitle">Aantal personen</h3>
+                    <p id="wpersonen"></p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Terug</button>
+                    <button type="button" class="btn btn-primary" id="bestellen">Bestellen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--SCRIPTS-->
 
     <script>
-        document.getElementById("savechanges").onclick = nextpagemeals;
-        function nextpagemeals() {
-          window.location.href = "/meals"
-        }
         document.getElementById("reservaties").onclick = nextpagereservations;
         function nextpagereservations() {
-          window.location.href = "/reservations"
+            ordernr = document.getElementById("ordernr").value;
+            localStorage.setItem("ordernr", ordernr);
+            window.location.href = "/reservations"
         }
-    
+
         document.getElementById("datepicker").onload = function test() {
-          document.getElementById("datepicker").minDate = 0;
+            document.getElementById("datepicker").minDate = 0;
         }
-    
-      </script>
+
+
+    </script>
+
+    <script src="javascripts/order.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

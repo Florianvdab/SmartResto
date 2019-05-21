@@ -47,3 +47,12 @@ h1 {
     height:85vh;
     margin-left:1rem;
 }
+
+.card{
+    height:65vh;
+}
+
+.card-img-top{
+    max-height: 300px;
+}
+
