@@ -57,11 +57,16 @@ function displayBestelling(bestelling) {
     let ordernummer = document.getElementById("ordernummer");
     let datum = document.getElementById("datum");
     let personen = document.getElementById("personen");
+    
+
     //let prijs = document.getElementById("prijs");
 
     ordernummer.innerText = bestelling.id;
+    console.log(ordernummer);
     datum.innerText = bestelling.datum;
+    console.log(datum);
     personen.innerText = bestelling.personen;
+    console.log(ordernummer);
     //prijs.innerText = bestelling.prijs;
 
 

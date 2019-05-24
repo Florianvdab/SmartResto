@@ -24,9 +24,7 @@
         integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
         crossorigin=""></script>
 
-    <script src="javascripts/repos.js"></script>
-
-    <script src="javascripts/scriptmaaltijden.js"></script>
+        <script src="js/index.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
@@ -52,55 +50,45 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Winkelmandje</a>
-                <div class="dropdown-menu dropdown-menu-right text-center" style="width:40vh;" id="winkelmand">
-                    <p id="winkelmandtotaal"></p>
+                    aria-haspopup="true" aria-expanded="false">Menu</a>
+                <div class="dropdown-menu dropdown-menu-right text-right">
+                    <a class="dropdown-item" href="#">About</a>
+                    <a class="dropdown-item" href="#">Contact</a>
                 </div>
             </li>
         </ul>
-
-
     </nav>
 
     <!--TITLE-->
 
-
-
-    <!--Center jumbotron-->
     <div class="row">
-        <div class="col-md-3">
-
-            <div class="jumbotron bg-white mt-4 fullheight text-center">
-                <h2 class="mb-4 mt-2 fonttitle text-center" id="location">Details</h2>
-                <hr>
-                <h3 class="fonttitle">Datum en tijd</h3>
-                <p id="datum"></p>
-                <h3 class="fonttitle">Aantal personen</h3>
-                <p id="personen"></p>
-                <h3 class="fonttitle">Prijs</h3>
-                <p id="totaal"></p>
-                <br>
-                <br>
-                <button type="button" class="btn btn-primary" id="" data-toggle="modal"
-                    data-target="#exampleModalCenter2">Bestelling plaatsen!</button>
-            </div>
-
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <hr class="bg-white mb-0">
+            <h1 class="display-1 fonttitle text-center">Smart Resto</h1>
+            <hr class="bg-white mt-0">
         </div>
-
-        <div class="col-md-1"></div>
-
-
-
-        <div class="col-md-8">
-            <div class="jumbotron bg-white mt-4 fullheight" style="overflow-y:scroll;">
-                <h2 class="mb-4 mt-2 fonttitle text-center" id="location">Maaltijden</h2>
-                <hr>
-                <div class="row mb-4" id="maaltijden">
-
-                </div>
-            </div>
-        </div>
+        <div class="col-md-4"></div>
     </div>
+
+
+    <!--JUMBOTRON-->
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="jumbotron bg-white mt-4">
+                <h2 class="display-1 mb-4 mt-2 fonttitle text-center">Bedankt!</h2>
+                <hr>
+                <h3 class="text-center">Hartelijk bedankt voor uw bestelling. U kan uw order terugvinden door op reservaties te klikken en
+                    gebruik te maken van onderstaand ordernummer.</h3>
+                <h2 class="text-center" id="finishedordernr"></h2>
+                <hr class="my-4">
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+
 
 
     <!-- Modal -->
@@ -121,14 +109,15 @@
                         <br>
                         <p>Aantal mensen:</p>
                         <select class="form-control" id="exampleSelect1">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
                         </select>
                         <br>
+
                         <p>Select a time:</p>
                         <div>
                             <div class="row mb-4">
@@ -175,10 +164,10 @@
                                     <p><input type="radio" name="time" value="20u"> 20u</p>
                                 </div>
                             </div>
-
-
                         </div>
+
                     </form>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -204,8 +193,11 @@
                 <div class="modal-body">
                     <p>Ordernummer:</p>
                     <div>
-                        <p><input type="text" name="ordernummer" id="ordernr" value=""></p>
+                        <p><input type="text" id="ordernr" name="ordernummer" value=""></p>
+
                     </div>
+
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -215,102 +207,38 @@
         </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle2" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle2">Bestellen!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h3 class="fonttitle">Maaltijden</h3>
-                    <div id="samenvatting">
-                    </div>
-                    <h3 class="fonttitle">Prijs</h3>
-                    <p id="wtotaal"></p>
-                    <h3 class="fonttitle">Datum en tijd</h3>
-                    <p id="wdatum"></p>
-                    <h3 class="fonttitle">Aantal personen</h3>
-                    <p id="wpersonen"></p>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Terug</button>
-                    <button type="button" class="btn btn-primary" id="bestellen">Bestellen</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!--SCRIPTS-->
 
     <script>
-        document.getElementById("reservaties").onclick = nextpagereservations;
-        function nextpagereservations() {
-            ordernr = document.getElementById("ordernr").value;
-            localStorage.setItem("ordernr", ordernr);
-            window.location.href = "/reservations"
-        }
-
-        document.getElementById("datepicker").onload = function test() {
-            document.getElementById("datepicker").minDate = 0;
-        }
-
-        function getBestellingen() {
-            console.log(repos.getBestellingen());
-            return repos.getBestellingen();
-        }
-
-        function countHighestId(bestellingen) {
-            let id = 0;
-            for (let i = 0; i < bestellingen.length; i++) {
-                if (bestellingen[i].bestellingid > id) {
-                    id = bestellingen[i].bestellingid;
-                }
-                console.log("ID: " + id);
-                console.log("BestellingID: " + bestellingen[i].bestellingid)
-            }
-            id = id + 1;
-            return id;
+        document.addEventListener("DOMContentLoaded", init);
+        function init() {
+            document.getElementById("finishedordernr").innerText = localStorage.getItem("finishedordernr");
         }
 
 
-        document.getElementById("bestellen").onclick = function () {
-            let txt = localStorage.getItem("datum") + " - " + localStorage.getItem("tijd");
-            let personen = localStorage.getItem("personen");
 
-            getBestellingen().then(function (result) {
-                let highestid = countHighestId(result);
-                let idds = document.getElementsByClassName('idss');
-
-                for (let i = 1; i <= idds.length / 2; i++) {
-                    const xhr = new XMLHttpRequest();
-                    xhr.open("POST", "https://192.168.10.10/makemealorder");
-                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                    xhr.send("bestellingid=" + highestid + "&maaltijdid=" + idds[i].textContent);
-
-                }
-                localStorage.setItem("finishedordernr", highestid);
+        var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
 
-                const xhr = new XMLHttpRequest();
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox.streets',
+            accessToken: 'pk.eyJ1Ijoid2lmaXgiLCJhIjoiY2p2bXBreDhpMTQ1aDRjb2Z0NDA0bGI4ZiJ9.kT6w1wQwRpUTMVLouj9ndQ'
+        }).addTo(mymap);
+    </script>
 
-                xhr.open("POST", "https://192.168.10.10/make");
-                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                xhr.send("datum=" + txt + "&personen=" + personen + "&bestellingid=" + highestid);
-
-                setTimeout(function () {
-                    window.location.href = "/finished";
-                }, 2000);
-
-
+    <script>
+        // Check that service workers are registered
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('js/service-worker.js');
             });
-
         }
+
 
     </script>
 

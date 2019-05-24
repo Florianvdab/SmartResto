@@ -38,12 +38,13 @@ function displayMaaltijden(maaltijden) {
     });
 }
 
-function generateMaaltijdListItem({ naam, prijs, ingredienten, keuken, url, soort }) {
+function generateMaaltijdListItem({ id, naam, prijs, ingredienten, keuken, url }) {
     return `
         <div class="col-sm-3">
             <div class="card text-center mb-5" style="width: 18rem;">
                 <img class="card-img-top" src="${url}" alt="Card image cap">
                 <div class="card-body d-flex flex-column">
+                    <h1 class="hidden hiddenids">${id}</h1>
                     <h5 class="card-title naam">${naam}</h5>
                     <p>${keuken}</p>
                     <p class="card-text">${ingredienten}</p>
@@ -57,12 +58,13 @@ function generateMaaltijdListItem({ naam, prijs, ingredienten, keuken, url, soor
 function winkelmand() {
     prijs = this.parentElement.getElementsByClassName("prijs")[0].innerText.replace(/\€/g, '');
     totaal = eval(totaal) + eval(prijs);
-    document.getElementById("totaal").innerHTML ="€ " + totaal
-    document.getElementById("winkelmandtotaal").innerHTML ="Totaal: € " + totaal
-    document.getElementById("wtotaal").innerHTML ="Totaal: € " + totaal
+    document.getElementById("totaal").innerHTML ="€ " + totaal;
+    document.getElementById("winkelmandtotaal").innerHTML ="Totaal: € " + totaal;
+    document.getElementById("wtotaal").innerHTML ="Totaal: € " + totaal;
+    let id = this.parentElement.getElementsByClassName("hiddenids")[0].innerText;
     let naam = this.parentElement.getElementsByClassName("naam")[0].innerText;
     let prijsmetteken = this.parentElement.getElementsByClassName("prijs")[0].innerText;
-    let samenvatting = naam + " - " + prijsmetteken;
+    let samenvatting = "<span class='idss'>"+id+ "</span> - " +naam + " - " + prijsmetteken;
     document.getElementById("winkelmand").innerHTML +="<p>"+ samenvatting + "</p>";
     document.getElementById("samenvatting").innerHTML +="<p>"+ samenvatting + "</p>";
     

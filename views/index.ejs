@@ -23,7 +23,7 @@
   <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
     integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
     crossorigin=""></script>
-
+  <script src="js/index.js"></script>
 
   <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
@@ -182,50 +182,50 @@
 
             <p>Select a time:</p>
             <div>
-                <div class="row mb-4">
-                    <div class="col-sm-4">
-                      <p><input type="radio" name="time" value="11u"> 11u</p>
-                    </div>
-                    <div class="col-sm-4">
-                      <p><input type="radio" name="time" value="11u30"> 11u30</p>
-                    </div>
-                    <div class="col-sm-4">
-                      <p><input type="radio" name="time" value="11u30"> 12u</p>
-                    </div>
-                  </div>
-                  <div class="row mb-4">
-                    <div class="col-sm-4">
-                      <p><input type="radio" name="time" value="12u30"> 12u30</p>
-                    </div>
-                    <div class="col-sm-4">
-                      <p><input type="radio" name="time" value="13u"> 13u</p>
-                    </div>
-                    <div class="col-sm-4">
-                      <p><input type="radio" name="time" value="13u30"> 13u30</p>
-                    </div>
-                  </div>
-                  <div class="row mb-4">
-                      <div class="col-sm-4">
-                        <p><input type="radio" name="time" value="17u30"> 17u30</p>
-                      </div>
-                      <div class="col-sm-4">
-                        <p><input type="radio" name="time" value="18u"> 18u</p>
-                      </div>
-                      <div class="col-sm-4">
-                        <p><input type="radio" name="time" value="18u30"> 18u30</p>
-                      </div>
-                    </div>
-                    <div class="row mb-4">
-                        <div class="col-sm-4">
-                          <p><input type="radio" name="time" value="19u"> 19u</p>
-                        </div>
-                        <div class="col-sm-4">
-                          <p><input type="radio" name="time" value="19u30"> 19u30</p>
-                        </div>
-                        <div class="col-sm-4">
-                          <p><input type="radio" name="time" value="20u"> 20u</p>
-                        </div>
-                      </div>
+              <div class="row mb-4">
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="11u"> 11u</p>
+                </div>
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="11u30"> 11u30</p>
+                </div>
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="11u30"> 12u</p>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="12u30"> 12u30</p>
+                </div>
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="13u"> 13u</p>
+                </div>
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="13u30"> 13u30</p>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="17u30"> 17u30</p>
+                </div>
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="18u"> 18u</p>
+                </div>
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="18u30"> 18u30</p>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="19u"> 19u</p>
+                </div>
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="19u30"> 19u30</p>
+                </div>
+                <div class="col-sm-4">
+                  <p><input type="radio" name="time" value="20u"> 20u</p>
+                </div>
+              </div>
             </div>
 
           </form>
@@ -347,17 +347,14 @@
   </script>
 
   <script>
-    document.getElementById("reservaties").onclick = nextpagereservations;
-
-    function nextpagereservations() {
-      ordernr = document.getElementById("ordernr").value;
-      localStorage.setItem("ordernr", ordernr);
-      window.location.href = "/reservations"
+    // Check that service workers are registered
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('js/service-worker.js');
+      });
     }
 
-    document.getElementById("datepicker").onload = function test() {
-      document.getElementById("datepicker").minDate = 0;
-    }
 
   </script>
 

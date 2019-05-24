@@ -14,4 +14,8 @@ router.get('/reservations', function(req, res, next) {
   res.render('reservations', { title: 'Express' });
 });
 
+router.get('/finished', function(req, res, next) {
+  res.render('finished', { title: 'Express' });
+});
+
 module.exports = router;
