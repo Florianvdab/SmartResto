@@ -297,9 +297,9 @@
       <div class="card py-4 h-100">
         <div class="card-body text-center">
           <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-          <h2 class="m-0 fonttitle">Adress</h2>
+          <h2 class="m-0 fonttitle">Adres</h2>
           <hr class="my-2">
-          <div class="small text-black-50">4923 Market Street, Orlando FL</div>
+          <div class="small text-black-50">'s Graventafelstraat 2 8980 Passendale</div>
         </div>
       </div>
     </div>
@@ -327,7 +327,7 @@
           <i class="fas fa-mobile-alt text-primary mb-2"></i>
           <h2 class="m-0 fonttitle">Telefoon</h2>
           <hr class="my-2">
-          <div class="small text-black-50">+1 (555) 902-8832</div>
+          <div class="small text-black-50">051 30 10 82</div>
         </div>
       </div>
     </div>
@@ -336,13 +336,14 @@
   <!--SCRIPTS-->
 
   <script>
-    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-
+    var mymap = L.map('mapid').setView([50.9080155, 3.0192866], 13);
+    var marker = L.marker([50.9080155, 3.0192866]).addTo(mymap);
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
       maxZoom: 18,
       id: 'mapbox.streets',
       accessToken: 'pk.eyJ1Ijoid2lmaXgiLCJhIjoiY2p2bXBreDhpMTQ1aDRjb2Z0NDA0bGI4ZiJ9.kT6w1wQwRpUTMVLouj9ndQ'
+      
     }).addTo(mymap);
   </script>
 

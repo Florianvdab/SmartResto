@@ -44,7 +44,7 @@ function generateMaaltijdListItem({ id, naam, prijs, ingredienten, keuken, url }
             <div class="card text-center mb-5" style="width: 18rem;">
                 <img class="card-img-top" src="${url}" alt="Card image cap">
                 <div class="card-body d-flex flex-column">
-                    <h1 class="hidden hiddenids">${id}</h1>
+                    <h1 class="hiddenids" style='display:none' >${id}</h1>
                     <h5 class="card-title naam">${naam}</h5>
                     <p>${keuken}</p>
                     <p class="card-text">${ingredienten}</p>
@@ -64,7 +64,7 @@ function winkelmand() {
     let id = this.parentElement.getElementsByClassName("hiddenids")[0].innerText;
     let naam = this.parentElement.getElementsByClassName("naam")[0].innerText;
     let prijsmetteken = this.parentElement.getElementsByClassName("prijs")[0].innerText;
-    let samenvatting = "<span class='idss'>"+id+ "</span> - " +naam + " - " + prijsmetteken;
+    let samenvatting = "<span class='idss' style='display:none'>"+id+ "</span>" +naam + " - " + prijsmetteken;
     document.getElementById("winkelmand").innerHTML +="<p>"+ samenvatting + "</p>";
     document.getElementById("samenvatting").innerHTML +="<p>"+ samenvatting + "</p>";
     
